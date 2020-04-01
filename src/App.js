@@ -2,6 +2,7 @@ import React from 'react';
 import Create from './components/create.js'
 import { BrowserRouter as Router,Route, Link } from 'react-router-dom';
 import './App.css';
+import Home from './components/home.js'
 
 class App extends React.Component {
 
@@ -18,37 +19,44 @@ class App extends React.Component {
 
       
       <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-      <ul className="navbar-nav">
-      <Link to={'/'}>
-        <li className="nav-item active">  
-         CRUD
-        </li>
-        </Link>
-        <Link to={'/create'}>
-        <li className="nav-item active">  
-         CREATE
-        </li>
-        </Link>
-        <Link to={'/read'}>
-        <li className="nav-item active">  
-        READ
-        </li>
-        </Link>
-        <Link to={'/update'}>
-        <li className="nav-item active">  
-         UPDATE
-        </li>
-        </Link>
-        <Link to={'/delete'}>
-        <li className="nav-item active">  
-         DELETE
-        </li>
-        </Link>
-      </ul>
-    </nav>
+
+  <a className="navbar-brand" href="#">Logo</a>
   
 
-     <Create></Create>
+  <ul className="navbar-nav">
+    <li className="nav-item">
+      <Link to="/">
+      <a className="nav-link">CRUD</a>
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link to="create">
+      <a className="nav-link">Create</a>
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link to="read">
+      <a className="nav-link">Read</a>
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link to="update">
+      <a className="nav-link">Update</a>
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link to="delete">
+      <a className="nav-link">Delete</a>
+      </Link>
+    </li>
+  </ul>
+</nav>
+  
+    
+      <Route path="/" component={Home}></Route>
+
+      <Route path="/create" component={Create}></Route>
+     
 
       
 
